@@ -1,0 +1,79 @@
+{
+   "exercises": {
+      "muscle group": [
+         {
+            "Group Name": "chest",
+               "Exercise Name" : [
+                  "Barbell Bench Press",
+                  "Dumbbell Bench Press",
+                  "Incline Barbell Bench Press",
+                  "Incline Dumbbell Bench Press",
+                  "Chest Dips",
+                  "Pec-Deck Machine",
+                  "Dumbbell Chest Fly"
+               ]
+         },
+         {
+            "Group Name": "back",
+               "Exercise Name" : [
+                  "Barbell Dead Lift",
+                  "Wide-Grip Pull-Up",
+                  "Bent-Over Barbell Deadlift",
+                  "Standing T-Bar Row",
+                  "Wide-Grip Seated Cable Row",
+                  "Close-Grip Pull-Down",
+                  "Single-Arm Dumbbell Row",
+                  "Decline Bench Dumbbell Pull-Over"
+               ]
+         },
+         {
+            "Group Name": "abs",
+               "Exercise Name" : [
+                  "Hanging Leg Raise",
+                  "Hanging Leg Raise",
+                  "Machine Crunch",
+                  "Cable Pallof Press",
+                  "Kneeling Cable Crunch",
+                  "Decline-Bench Crunch With Medicine Ball",
+                  "Decline Russian Twist With Medicine Ball",
+                  "Ab-Wheel Roll-Out",
+                  "Exercise-Ball Pike",
+                  "Plank"
+               ]
+         },
+         {
+            "Group Name": "biceps",
+               "Exercise Name" : [
+                  "High Cable Curl",
+                  "Low Cable Rope Curl",
+                  "Chin-Up",
+                  "Incline Dumbbell Curl",
+                  "Dumbbell Concentration Curl",
+                  "Dumbbell Hammer Curl",
+                  "EZ-Bar Reverse Curl",
+                  "Seated Machine Curl",
+                  "Barbell Curl",
+                  "Barbell Drag Curl",
+                  "Dumbbell Preacher Curl"
+               ]
+         },
+         {
+            "Group Name": "shoulders",
+               "Exercise Name" : [
+                  "Barbell Push Press",
+                  "Barbell Standing Military Press",
+                  "Dumbbell Standing Military Press",
+                  "Dumbbell Incline Row",
+                  "Seated Overhead Dumbbell Press",
+                  "Seated Overhead Barbell Press",
+                  "Upright Row",
+                  "Arnold Press",
+                  "Machine Rear-Delt Fly",
+                  "Dumbbell Lateral Raise",
+                  "Front Dumbbell Raise"
+               ]
+         }
+      ]
+
+   }
+}
