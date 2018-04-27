@@ -3,25 +3,17 @@ jQuery(document).ready(function(){
 
 
 
-      $.getJSON( "https://raw.githubusercontent.com/acbrent25/Workout-Exercise-API/master/exercise.json", function( data ) {
-        
-        var muscleGroup = (data["exercises"]["muscle group"]);
-        console.log(muscleGroup);
+    var queryURL = "https://raw.githubusercontent.com/acbrent25/Workout-Exercise-API/master/exercise.json"
+    $.ajax({
+      url: queryURL,
+      method: "get"
+    }).done(function(data) {
+      console.log(data);
+      console.log(data["muscle group"]);
+      // exerciseResults(data.Search);
+    }).done(function() {
+      console.log('do something here')
+    });
 
-        for (var i =0; i < muscleGroup.length; i++) {
-            muscleGroupArr = [];
-            var chest = muscleGroup[0]["Group Name"];
-            console.log('chest: ' + chest);
-            var back = muscleGroup[1]["Group Name"];
-            console.log('back: ' + back);
-            
-        }
-        
-
-
-       
-
-
-      });
 
 });
