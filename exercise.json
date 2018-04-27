@@ -1,79 +1,62 @@
 {
-   "exercises": {
-      "muscle group": [
-         {
-            "Group Name": "chest",
-               "Exercise Name" : [
-                  "Barbell Bench Press",
-                  "Dumbbell Bench Press",
-                  "Incline Barbell Bench Press",
-                  "Incline Dumbbell Bench Press",
-                  "Chest Dips",
-                  "Pec-Deck Machine",
-                  "Dumbbell Chest Fly"
-               ]
-         },
-         {
-            "Group Name": "back",
-               "Exercise Name" : [
-                  "Barbell Dead Lift",
-                  "Wide-Grip Pull-Up",
-                  "Bent-Over Barbell Deadlift",
-                  "Standing T-Bar Row",
-                  "Wide-Grip Seated Cable Row",
-                  "Close-Grip Pull-Down",
-                  "Single-Arm Dumbbell Row",
-                  "Decline Bench Dumbbell Pull-Over"
-               ]
-         },
-         {
-            "Group Name": "abs",
-               "Exercise Name" : [
-                  "Hanging Leg Raise",
-                  "Hanging Leg Raise",
-                  "Machine Crunch",
-                  "Cable Pallof Press",
-                  "Kneeling Cable Crunch",
-                  "Decline-Bench Crunch With Medicine Ball",
-                  "Decline Russian Twist With Medicine Ball",
-                  "Ab-Wheel Roll-Out",
-                  "Exercise-Ball Pike",
-                  "Plank"
-               ]
-         },
-         {
-            "Group Name": "biceps",
-               "Exercise Name" : [
-                  "High Cable Curl",
-                  "Low Cable Rope Curl",
-                  "Chin-Up",
-                  "Incline Dumbbell Curl",
-                  "Dumbbell Concentration Curl",
-                  "Dumbbell Hammer Curl",
-                  "EZ-Bar Reverse Curl",
-                  "Seated Machine Curl",
-                  "Barbell Curl",
-                  "Barbell Drag Curl",
-                  "Dumbbell Preacher Curl"
-               ]
-         },
-         {
-            "Group Name": "shoulders",
-               "Exercise Name" : [
-                  "Barbell Push Press",
-                  "Barbell Standing Military Press",
-                  "Dumbbell Standing Military Press",
-                  "Dumbbell Incline Row",
-                  "Seated Overhead Dumbbell Press",
-                  "Seated Overhead Barbell Press",
-                  "Upright Row",
-                  "Arnold Press",
-                  "Machine Rear-Delt Fly",
-                  "Dumbbell Lateral Raise",
-                  "Front Dumbbell Raise"
-               ]
-         }
+   
+"muscle group": [{
+      "chest": [  
+            {"exercise":  "Barbell Bench Press"},
+            {"exercise":  "Dumbbell Bench Press" },
+            {"exercise":  "Incline Barbell Bench Press" },
+            {"exercise":  "Incline Dumbbell Bench Press" },
+            {"exercise":  "Chest Dips" },
+            {"exercise":  "Pec-Deck Machine" },
+            {"exercise":  "Dumbbell Chest Fly" }
+      ],
+      "back": [  
+            {"exercise":  "Barbell Dead Lift"},
+            {"exercise":  "Wide-Grip Pull-Up" },
+            {"exercise":  "Bent-Over Barbell Deadlift" },
+            {"exercise":  "Standing T-Bar Row" },
+            {"exercise":  "Wide-Grip Seated Cable Row" },
+            {"exercise":  "Close-Grip Pull-Down" },
+            {"exercise":  "Single-Arm Dumbbell Row" }
+      ],
+      "abs": [
+            {"exercise":  "Hanging Leg Raise"},
+            {"exercise":  "Hanging Leg Raise"},
+            {"exercise":  "Machine Crunch"},
+            {"exercise":  "Cable Pallof Press"},
+            {"exercise":  "Kneeling Cable Crunch"},
+            {"exercise":  "Decline-Bench Crunch With Medicine Ball"},
+            {"exercise":  "Decline Russian Twist With Medicine Ball"},
+            {"exercise":  "Ab-Wheel Roll-Out"},
+            {"exercise":  "Exercise-Ball Pike"},
+            {"exercise":  "Plank"}
+      ],
+      "biceps": [
+            {"exercise":  "High Cable Curl"},
+            {"exercise":  "Low Cable Rope Curl"},
+            {"exercise":  "Chin-Up"},
+            {"exercise":  "Incline Dumbbell Curl"},
+            {"exercise":  "Dumbbell Concentration Curl"},
+            {"exercise":  "Dumbbell Hammer Curl"},
+            {"exercise":  "EZ-Bar Reverse Curl"},
+            {"exercise":  "Seated Machine Curl"},
+            {"exercise":  "Barbell Curl"},
+            {"exercise":  "Barbell Drag Curl"},
+            {"exercise":  "Dumbbell Preacher Curl"}
+      ],
+      "shoulders": [
+            {"exercise":  "Barbell Push Press"},
+            {"exercise":  "Barbell Standing Military Press"},
+            {"exercise":  "Dumbbell Standing Military Press"},
+            {"exercise":  "Dumbbell Incline Row"},
+            {"exercise":  "Seated Overhead Dumbbell Press"},
+            {"exercise":  "Seated Overhead Barbell Press"},
+            {"exercise":  "Upright Row"},
+            {"exercise":  "Arnold Press"},
+            {"exercise":  "Machine Rear-Delt Fly"},
+            {"exercise":  "Dumbbell Lateral Raise"},
+            {"exercise":  "Front Dumbbell Raise"}
       ]
+}]
 
-   }
 }
