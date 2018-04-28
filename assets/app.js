@@ -9,11 +9,18 @@ jQuery(document).ready(function(){
       method: "get"
     }).done(function(data) {
       console.log(data);
-      console.log(data["muscle group"]);
+      
+
+      var obj = JSON.parse(data)
+
+      for (key in data) {
+        var muscleGroup = data[key];
+        console.log(muscleGroup);
+      }
+
       // exerciseResults(data.Search);
-    }).done(function() {
-      console.log('do something here')
     });
+    
 
 
 });

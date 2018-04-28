@@ -1,6 +1,5 @@
 {
    
-"muscleGroup": [{
       "chest": [  
             {"exercise":  "Barbell Bench Press"},
             {"exercise":  "Dumbbell Bench Press" },
@@ -57,6 +56,5 @@
             {"exercise":  "Dumbbell Lateral Raise"},
             {"exercise":  "Front Dumbbell Raise"}
       ]
-}]
 
 }
