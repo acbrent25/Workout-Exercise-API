@@ -11,20 +11,38 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="row">
+        <div class="colg">
+            <h1>Exercise Tracker Yo</h1>
+        </div>
+      </div>
+    </div>
+    
 
     <div class="container">
         <div class="row">
-            <div class="colg">
-                        <form>
-                            <div class="form-group">
-                              <label for="muscleGroupSelect">Muscle Group select</label>
-                              <select class="form-control" id="muscleGroupSelect">
-                                <option>1</option>
-                              </select>
-                            </div>
-                        </form>
+          <!-- Muscle Group -->
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                      <label for="muscleGroupSelect">Muscle Group select</label>
+                      <select class="form-control" id="muscleGroupSelect">
+                        <option value="">Muscle Groups</option>
+                      </select>
+                    </div>
+                </form>
             </div>
+            <!-- Excercise -->
+            <div class="col">
+              <form>
+                  <div class="form-group">
+                    <label for="exerciseSelect">Exercise Select</label>
+                    <select class="form-control" id="exerciseSelect">
+                    </select>
+                  </div>
+              </form>
+          </div>
         </div>
     </div>
 
