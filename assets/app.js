@@ -8,15 +8,14 @@ jQuery(document).ready(function(){
       url: queryURL,
       method: "get"
     }).done(function(data) {
-      console.log(data);
+      // console.log(data);
+      var msg = ''
+      var parseData = JSON.parse(data);
+      $.each(parseData.chest, function(key, val){
+        console.log(val.exercise);
+      });
+
       
-
-      var obj = JSON.parse(data)
-
-      for (key in data) {
-        var muscleGroup = data[key];
-        console.log(muscleGroup);
-      }
 
       // exerciseResults(data.Search);
     });
