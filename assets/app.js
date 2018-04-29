@@ -10,6 +10,10 @@ jQuery(document).ready(function(){
       var parseData = JSON.parse(data);
       var muscleGroupSelect = $('select#muscleGroupSelect');
       var exerciseSelect = $('select#exerciseSelect');
+      var setSelect = $('select#setSelect');
+      var setSection = $('#setsSection');
+      var setsRow = $('#setsRow');
+      var weightsRow = $('#weightsRow');
       
       // Add muscle groups to select
       $.each(parseData, function(key, val){
@@ -40,9 +44,37 @@ jQuery(document).ready(function(){
         } else if (optionVal == 'shoulders'){
           shoulders();
         }
-        
       });
 
+      $(setSelect).change(function(){
+        setSection.empty();
+        // get selected option value
+        var setVal = $(this).find(':selected').val();
+        console.log('setVal: ' + setVal);
+        
+        var i = 0;
+        while (i < setVal) {
+          // Add Inputs for each set
+          var setInput = '<div class="col"><input class="form-control" type="text" placeholder="1"></div>';
+
+          var weightInput = '<div class="col"><input class="form-control" type="text" placeholder="1"></div>';
+          
+          setsRow.append(setInput);
+          weightsRow.append(weightInput);
+
+          i++;
+          
+        }
+
+
+
+      });
+
+      
+
+      ///////////////////////////////////
+      //    Set up exercise function
+      ///////////////////////////////////
 
       function chest() {
         // Chest
