@@ -1,17 +1,34 @@
 jQuery(document).ready(function(){
     console.log('loaded');
 
-    var queryURL = "https://raw.githubusercontent.com/acbrent25/Workout-Exercise-API/master/exercise.json"
-    $.ajax({
-      url: queryURL,
-      method: "get"
-    }).done(function(data) {
-      // console.log(data);
+    // console.log(data);
+    $('#selectRow').empty();
+    plusBtnConstructor();
+
+    $('i.fas.fa-plus-square').click(function(){
+        addExercise();
+    });
+
+
+
+    function addExercise() {
+      var queryURL = "https://raw.githubusercontent.com/acbrent25/Workout-Exercise-API/master/exercise.json"
+      $.ajax({
+        url: queryURL,
+        method: "get"
+      }).done(function(data) {
+      
+      muscleGroupConstructor();
+      exerciseConstructor();
+      setsConstructor();
+      setSectionConstructor();
+      plusBtnConstructor();
+      
       var parseData = JSON.parse(data);
       var muscleGroupSelect = $('select#muscleGroupSelect');
       var exerciseSelect = $('select#exerciseSelect');
       var setSelect = $('select#setSelect');
-      var setSection = $('#setsSection');
+      var setSection = $('#setSection');
       var setsRow = $('#setsRow');
       var weightsRow = $('#weightsRow');
       
@@ -20,7 +37,6 @@ jQuery(document).ready(function(){
         console.log('key: ' + key);
         var option = "<option data-exercise=" + key + ">" + key + "</option>";
         muscleGroupSelect.append(option);
-
       });
 
       // Muscle group select function
@@ -46,8 +62,10 @@ jQuery(document).ready(function(){
         }
       });
 
+      // Add Weight and Rep count for # of sets selected
       $(setSelect).change(function(){
-        setSection.empty();
+        setsRow.empty();
+        weightsRow.empty();
         // get selected option value
         var setVal = $(this).find(':selected').val();
         console.log('setVal: ' + setVal);
@@ -65,15 +83,12 @@ jQuery(document).ready(function(){
           i++;
           
         }
-
-
-
       });
-
-      
 
       ///////////////////////////////////
       //    Set up exercise function
+      //    Ads Exercises to Selects
+      //    From JSON data
       ///////////////////////////////////
 
       function chest() {
@@ -121,14 +136,116 @@ jQuery(document).ready(function(){
         });
       }
 
-      
-      
+    });// data.done
 
-      
+    } // addExercise
 
-      // exerciseResults(data.Search);
-    });
+    // Muscle Group Constructor Function
+    function muscleGroupConstructor() {
+      
+      var div = $('<div/>', {
+        'class' : 'col'
+      });
+      var form = $('<form/>');
+      div.append(form);
+      var formGroup = $('<div/>', {
+        'class': 'form-group'
+      }).appendTo(form);
+      var label = $('<label/>',{
+        'for': 'muscleGroupSelect',
+        text: 'Muscle Group'
+      }).appendTo(formGroup);
+      var select = $('<select/>', {
+        'class' : 'form-control',
+        'id' : 'muscleGroupSelect'
+      }).appendTo(formGroup);
+      var selectDefault = $('<option/>',{
+        'value' : 0,
+        text : 'Muscle Groups'
+      }).appendTo(select);
+
+      $('#selectRow').append(div);
+    }
+
+    // Exercise Constructor Function
+    function exerciseConstructor() {
+      
+      var div = $('<div/>', {
+        'class' : 'col'
+      });
+      var form = $('<form/>');
+      div.append(form);
+      var formGroup = $('<div/>', {
+        'class': 'form-group'
+      }).appendTo(form);
+      var label = $('<label/>',{
+        'for': 'exerciseSelect',
+        text: 'Exercise'
+      }).appendTo(formGroup);
+      var select = $('<select/>', {
+        'class' : 'form-control',
+        'id' : 'exerciseSelect'
+      }).appendTo(formGroup);
+      var selectDefault = $('<option/>',{
+        'value' : 0,
+        text : 'Exercises'
+      }).appendTo(select);
+
+      $('#selectRow').append(div);
+    }
+
+    function setsConstructor() {
+      var div = $('<div/>', {
+        'class' : 'col'
+      });
+      var form = $('<form/>');
+      div.append(form);
+      var formGroup = $('<div/>', {
+        'class': 'form-group'
+      }).appendTo(form);
+      var label = $('<label for="setSelect"># Sets</label>');
+      formGroup.append(label);
+      var select = $('<select/>', {
+        'class' : 'form-control',
+        'id' : 'setSelect'
+      }).appendTo(formGroup);
+      select.html('<option value="0">-</option>' + 
+                  '<option value="4">4</option>' +
+                  '<option value="5">5</option>' +
+                  '<option value="7">7</option>');
     
+      $('#selectRow').append(div);
+    }
+
+
+    function setSectionConstructor() {
+      var setDiv = $('<div/>',{
+        'id' : 'setSection'
+      });
+      
+      var setRowDiv = $('<div/>',{
+        'class' : 'row',
+        'id'    : 'setsRow'
+      }).appendTo(setDiv);
+
+      var weightRowDiv = $('<div/>',{
+        'class' : 'row',
+        'id'    : 'weightsRow'
+      });
+      $('#selectRow').append(setDiv);
+
+    }
+
+    function plusBtnConstructor() {
+      var div = $('<div/>',{
+        'class' : 'col-12',
+        'style' : 'font-size:1em; color:#434343'
+      });
+      var btn = $('<i/>', {
+        'class' : 'fas fa-plus-square'
+      }).appendTo(div);
+      $('#selectRow').append(div);
+    }
 
 
 });
