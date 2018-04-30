@@ -141,8 +141,41 @@ jQuery(document).ready(function(){
            'id' : exerciseId + '_ex_select'
          }).appendTo(ex_formGroup);
 
-          
 
+         //----------------------------------------------
+         //   SET UP # of Sets SELECT
+         //---------------------------------------------- 
+
+         var sets_col = $('<div/>', {
+            'class' : 'col',
+            'id' : exerciseId + '_sets_col'
+         }).appendTo(exercise_row);
+
+         // Set up form with id and append to new div
+         var sets_form = $('<form/>', {
+            'id': exerciseId + '_sets_form'
+         }).appendTo('#' + exerciseId + '_sets_col');
+
+         // Set up form group
+         var sets_formGroup = $('<div/>', {
+           'class': 'form-group'
+         }).appendTo('#' + exerciseId + '_sets_form');
+
+         // Set up form group label
+         var sets_label = $('<label/>',{
+           'for': exerciseId + '_sets_select',
+           text: 'Exercise'
+         }).appendTo(sets_formGroup);
+
+         // Set up select
+         var sets_select = $('<select/>', {
+           'class' : 'form-control',
+           'id' : exerciseId + '_sets_select'
+         }).appendTo(sets_formGroup);
+         sets_select.html('<option value="0">-</option>' + 
+         '<option value="4">4</option>' +
+         '<option value="5">5</option>' +
+         '<option value="7">7</option>');
 
 
 
