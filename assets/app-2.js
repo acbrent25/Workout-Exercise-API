@@ -42,20 +42,25 @@ jQuery(document).ready(function(){
 
          console.log(exerciseId);
 
+         // Set up Container Div and append to main container
+         var exercise_row = $('<div/>', {
+         'class' : 'row',
+         'id' : exerciseId + '_exerciseWell'
+         }).appendTo('#mainContainer');
+
          //----------------------------------------------
          //   SET UP MUSCLE GROUP SELECT
          //----------------------------------------------
          
-         // Set up Container Div and append to main container
-         var mg_div = $('<div/>', {
-            'class' : 'row',
-            'id' : exerciseId + '_exerciseWell'
-          }).appendTo('#mainContainer');
+          var mg_col = $('<div/>',{
+            'class' : 'col',
+             'id' : exerciseId + '_mg_col'
+          }).appendTo(exercise_row);
 
           // Set up form with id and append to new div
           var mg_form = $('<form/>', {
              'id': exerciseId + '_mg_form'
-          }).appendTo('#' + exerciseId + '_exerciseWell');
+          }).appendTo('#' + exerciseId + '_mg_col');
 
           // Set up form group
           var mg_formGroup = $('<div/>', {
@@ -80,10 +85,8 @@ jQuery(document).ready(function(){
             text : 'Muscle Groups'
           }).appendTo(mg_select);
 
-         
-
-
          // Muscle group select function
+         // Add the appropriate excercise to exercise select based on muscle group choice
          $('#' + exerciseId + '_mg_select').on('change', function(){
             // Clear out any options
             // $('#' + exerciseId + '_mg_select').empty();
@@ -107,7 +110,36 @@ jQuery(document).ready(function(){
          });
 
 
+         //----------------------------------------------
+         //   SET UP Exercise SELECT
+         //----------------------------------------------
 
+         var ex_col = $('<div/>',{
+            'class' : 'col',
+            'id' : exerciseId + '_ex_col'
+         }).appendTo(exercise_row);
+
+         // Set up form with id and append to new div
+         var ex_form = $('<form/>', {
+            'id': exerciseId + '_ex_form'
+         }).appendTo('#' + exerciseId + '_ex_col');
+
+         // Set up form group
+         var ex_formGroup = $('<div/>', {
+           'class': 'form-group'
+         }).appendTo('#' + exerciseId + '_ex_form');
+
+         // Set up form group label
+         var ex_label = $('<label/>',{
+           'for': exerciseId + '_ex_select',
+           text: 'Exercise'
+         }).appendTo(ex_formGroup);
+
+         // Set up select
+         var ex_select = $('<select/>', {
+           'class' : 'form-control',
+           'id' : exerciseId + '_ex_select'
+         }).appendTo(ex_formGroup);
 
           
 
@@ -125,7 +157,7 @@ jQuery(document).ready(function(){
             $.each(parseData.chest, function(key, val){
               console.log(val.exercise);
               var exerciseOption = "<option data-exercise=" + val.exercise + ">" + val.exercise + "</option>";
-              exerciseSelect.append(exerciseOption);
+              $('#' + exerciseId + '_ex_select').append(exerciseOption);
             });
           }
     
@@ -134,7 +166,7 @@ jQuery(document).ready(function(){
             $.each(parseData.back, function(key, val){
               console.log(val.exercise);
               var exerciseOption = "<option data-exercise=" + val.exercise + ">" + val.exercise + "</option>";
-              exerciseSelect.append(exerciseOption);
+              $('#' + exerciseId + '_ex_select').append(exerciseOption);
             });
           }
           
@@ -143,7 +175,7 @@ jQuery(document).ready(function(){
             $.each(parseData.abs, function(key, val){
               console.log(val.exercise);
               var exerciseOption = "<option data-exercise=" + val.exercise + ">" + val.exercise + "</option>";
-              exerciseSelect.append(exerciseOption);
+              $('#' + exerciseId + '_ex_select').append(exerciseOption);
             });
           }
     
@@ -152,7 +184,7 @@ jQuery(document).ready(function(){
             $.each(parseData.biceps, function(key, val){
               console.log(val.exercise);
               var exerciseOption = "<option data-exercise=" + val.exercise + ">" + val.exercise + "</option>";
-              exerciseSelect.append(exerciseOption);
+              $('#' + exerciseId + '_ex_select').append(exerciseOption);
             });
           }
     
@@ -161,7 +193,7 @@ jQuery(document).ready(function(){
             $.each(parseData.shoulders, function(key, val){
               console.log(val.exercise);
               var exerciseOption = "<option data-exercise=" + val.exercise + ">" + val.exercise + "</option>";
-              exerciseSelect.append(exerciseOption);
+              $('#' + exerciseId + '_ex_select').append(exerciseOption);
             });
           }
     
