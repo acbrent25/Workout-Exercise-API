@@ -1,12 +1,14 @@
 jQuery(document).ready(function(){
     console.log('loaded');
 
+    var id = 0;
+
     // console.log(data);
     $('#selectRow').empty();
-    plusBtnConstructor();
 
-    $('i.fas.fa-plus-square').click(function(){
-        addExercise();
+    $('body').on('click', 'i.fas.fa-plus-square', function(){
+        id++
+        addExercise(id);
     });
 
 
@@ -17,13 +19,22 @@ jQuery(document).ready(function(){
         url: queryURL,
         method: "get"
       }).done(function(data) {
+
+        console.log('id: ' + id);
       
+      // Add Constructors
       muscleGroupConstructor();
       exerciseConstructor();
       setsConstructor();
       setSectionConstructor();
-      plusBtnConstructor();
+
+      // Row for each exercise group
+      var constainerRow = $('<div/>',{
+        'class' : 'row',
+        'id'    : id + 'selectRow',
+      }).appendTo('#appWell');
       
+      // Set up variables
       var parseData = JSON.parse(data);
       var muscleGroupSelect = $('select#muscleGroupSelect');
       var exerciseSelect = $('select#exerciseSelect');
@@ -73,9 +84,9 @@ jQuery(document).ready(function(){
         var i = 0;
         while (i < setVal) {
           // Add Inputs for each set
-          var setInput = '<div class="col"><input class="form-control" type="text" placeholder="1"></div>';
+          var setInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
 
-          var weightInput = '<div class="col"><input class="form-control" type="text" placeholder="1"></div>';
+          var weightInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
           
           setsRow.append(setInput);
           weightsRow.append(weightInput);
@@ -136,10 +147,6 @@ jQuery(document).ready(function(){
         });
       }
 
-    });// data.done
-
-    } // addExercise
-
     // Muscle Group Constructor Function
     function muscleGroupConstructor() {
       
@@ -164,7 +171,7 @@ jQuery(document).ready(function(){
         text : 'Muscle Groups'
       }).appendTo(select);
 
-      $('#selectRow').append(div);
+      $('#' + id + 'selectRow').append(div);
     }
 
     // Exercise Constructor Function
@@ -176,22 +183,22 @@ jQuery(document).ready(function(){
       var form = $('<form/>');
       div.append(form);
       var formGroup = $('<div/>', {
-        'class': 'form-group'
+        'class' : 'form-group'
       }).appendTo(form);
       var label = $('<label/>',{
-        'for': 'exerciseSelect',
+        'for'   : 'exerciseSelect',
         text: 'Exercise'
       }).appendTo(formGroup);
       var select = $('<select/>', {
         'class' : 'form-control',
-        'id' : 'exerciseSelect'
+        'id'    : 'exerciseSelect'
       }).appendTo(formGroup);
       var selectDefault = $('<option/>',{
         'value' : 0,
-        text : 'Exercises'
+        text    : 'Exercises'
       }).appendTo(select);
 
-      $('#selectRow').append(div);
+      $('#appWellRow').append(div);
     }
 
     function setsConstructor() {
@@ -201,20 +208,20 @@ jQuery(document).ready(function(){
       var form = $('<form/>');
       div.append(form);
       var formGroup = $('<div/>', {
-        'class': 'form-group'
+        'class' : 'form-group'
       }).appendTo(form);
       var label = $('<label for="setSelect"># Sets</label>');
       formGroup.append(label);
       var select = $('<select/>', {
         'class' : 'form-control',
-        'id' : 'setSelect'
+        'id'    : 'setSelect'
       }).appendTo(formGroup);
       select.html('<option value="0">-</option>' + 
                   '<option value="4">4</option>' +
                   '<option value="5">5</option>' +
                   '<option value="7">7</option>');
     
-      $('#selectRow').append(div);
+      $('#appWellRow').append(div);
     }
 
 
@@ -232,7 +239,7 @@ jQuery(document).ready(function(){
         'class' : 'row',
         'id'    : 'weightsRow'
       });
-      $('#selectRow').append(setDiv);
+      $('#appWellRow').append(setDiv);
 
     }
 
@@ -244,8 +251,11 @@ jQuery(document).ready(function(){
       var btn = $('<i/>', {
         'class' : 'fas fa-plus-square'
       }).appendTo(div);
-      $('#selectRow').append(div);
+      $('#appWellRow').append(div);
     }
 
+    });// data.done
+
+    } // addExercise
 
 });

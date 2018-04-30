@@ -164,7 +164,7 @@ jQuery(document).ready(function(){
          // Set up form group label
          var sets_label = $('<label/>',{
            'for': exerciseId + '_sets_select',
-           text: 'Exercise'
+           text: '# of Sets'
          }).appendTo(sets_formGroup);
 
          // Set up select
@@ -176,6 +176,60 @@ jQuery(document).ready(function(){
          '<option value="4">4</option>' +
          '<option value="5">5</option>' +
          '<option value="7">7</option>');
+
+        
+         // Add Weight and Rep count for # of sets selected
+        $('#' + exerciseId + '_sets_select').on('change', function(){
+
+          if (!$('#' + exerciseId + '_reps_row') || !$('#' + exerciseId + '_weight_row')) {
+            $(this).empty();
+          } else {
+
+          
+          // Setup Rep Count Row
+          var reps_row = $('<div/>', {
+            'class' : 'row',
+            'id' : exerciseId + '_reps_row'
+          }).insertAfter("#" + exerciseId + '_exerciseWell');
+
+          // Add Rep Label
+          var reps_label = $('<span/>',{
+            'id': exerciseId + '_reps_label',
+            text: '# Reps'
+          }).insertBefore(reps_row).css({'float' : 'left', 'width' : '100px'});
+
+          // Setup Weight Count Row
+          var weight_row = $('<div/>', {
+            'class' : 'row',
+            'id' : exerciseId + '_weight_row'
+          }).insertAfter("#" + exerciseId + '_reps_row');
+
+          // Add Weight Label
+          var weight_label = $('<span/>',{
+            'id': exerciseId + '_weight_label',
+            text: 'weight'
+          }).insertBefore(weight_row).css({'float' : 'left', 'width' : '100px'});
+
+          // get selected option value for loop
+          var setVal = $(this).find(':selected').val();
+          console.log('setVal: ' + setVal);
+          
+          // Run loop and place number of inputs from select
+          var i = 0;
+          while (i < setVal) {
+            // Add Inputs for each set
+            var setInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
+
+            var weightInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
+            
+            reps_row.append(setInput);
+            weight_row.append(weightInput);
+
+            i++;
+            
+          }
+        }
+        });
 
 
 
