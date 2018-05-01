@@ -178,14 +178,17 @@ jQuery(document).ready(function(){
          '<option value="7">7</option>');
 
         
+         
          // Add Weight and Rep count for # of sets selected
-        $('#' + exerciseId + '_sets_select').on('change', function(){
+        $('#' + exerciseId + '_sets_select').on('change', function(e){
+          e.preventDefault();
 
-          if (!$('#' + exerciseId + '_reps_row') || !$('#' + exerciseId + '_weight_row')) {
-            $(this).empty();
-          } else {
+          // Remove existing inputs
+          $('#' + exerciseId + '_reps_row').empty();
+          $('#' + exerciseId + '_reps_label').empty();
+          $('#' + exerciseId + '_weight_row').empty();
+          $('#' + exerciseId + '_weight_label').empty();
 
-          
           // Setup Rep Count Row
           var reps_row = $('<div/>', {
             'class' : 'row',
@@ -217,18 +220,35 @@ jQuery(document).ready(function(){
           // Run loop and place number of inputs from select
           var i = 0;
           while (i < setVal) {
-            // Add Inputs for each set
-            var setInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
 
-            var weightInput = '<div class="col"><input class="form-control" type="text" placeholder=""></div>';
-            
-            reps_row.append(setInput);
-            weight_row.append(weightInput);
+            // Add Inputs for each rep
+            var reps_input_col = $('<div/>', {
+              'class': 'col',
+              'id': exerciseId + 'reps_input_col'
+            }).appendTo(reps_row);
+
+            var reps_input = $('<input/>',{
+              'class': 'form-control',
+              'type' : 'text',
+              'placeholder' : 'reps'
+            }).appendTo(reps_input_col);
+
+            // Add Inputs for each weigth
+            var weight_input_col = $('<div/>', {
+              'class': 'col',
+              'id': exerciseId + 'weight_input_col'
+            }).appendTo(weight_row);
+
+            var weight_input = $('<input/>',{
+              'class': 'form-control',
+              'type' : 'text',
+              'placeholder' : 'weight'
+            }).appendTo(weight_input_col);
 
             i++;
             
           }
-        }
+        
         });
 
 
