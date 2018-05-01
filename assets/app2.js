@@ -42,11 +42,15 @@ jQuery(document).ready(function(){
 
          console.log(exerciseId);
 
+         var exercise_wrapper = $('<div/>', {
+           'class' : 'exercise_wrapper'
+         }).appendTo('#mainContainer');
+
          // Set up Container Div and append to main container
          var exercise_row = $('<div/>', {
          'class' : 'row',
          'id' : exerciseId + '_exerciseWell'
-         }).appendTo('#mainContainer');
+         }).appendTo(exercise_wrapper);
 
          //----------------------------------------------
          //   SET UP MUSCLE GROUP SELECT
