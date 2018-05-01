@@ -1,9 +1,5 @@
 jQuery(document).ready(function(){
     console.log('loaded');
-
-    // Get a reference to the database service
-    var database = firebase.database();
-
     
     // Pull Exercise Data
     var queryURL = "https://raw.githubusercontent.com/acbrent25/Workout-Exercise-API/master/exercise.json"
@@ -19,7 +15,7 @@ jQuery(document).ready(function(){
          var addExerciseBtn = $('.fa-plus-square');
          var exerciseId = 0;
          
-         $('body').on('click', '.addExercise', function(e){
+         $('body').on('click', '.add-exercise-btn', function(e){
             e.preventDefault();
             console.log('clicked');
 
