@@ -195,7 +195,7 @@ jQuery(document).ready(function(){
 
           // Setup Rep Count Row
           var reps_row = $('<div/>', {
-            'class' : 'row',
+            'class' : 'row reps_row',
             'id' : exerciseId + '_reps_row'
           }).insertAfter("#" + exerciseId + '_exerciseWell');
 
@@ -203,19 +203,19 @@ jQuery(document).ready(function(){
           var reps_label = $('<span/>',{
             'id': exerciseId + '_reps_label',
             text: '# Reps'
-          }).insertBefore(reps_row).css({'float' : 'left', 'width' : '100px'});
+          }).insertBefore(reps_row);
 
           // Setup Weight Count Row
           var weight_row = $('<div/>', {
-            'class' : 'row',
+            'class' : 'row weight_row',
             'id' : exerciseId + '_weight_row'
           }).insertAfter("#" + exerciseId + '_reps_row');
 
           // Add Weight Label
           var weight_label = $('<span/>',{
             'id': exerciseId + '_weight_label',
-            text: 'weight'
-          }).insertBefore(weight_row).css({'float' : 'left', 'width' : '100px'});
+            text: 'Weight'
+          }).insertBefore(weight_row);
 
           // get selected option value for loop
           var setVal = $(this).find(':selected').val();
@@ -234,19 +234,19 @@ jQuery(document).ready(function(){
             var reps_input = $('<input/>',{
               'class': 'form-control',
               'type' : 'text',
-              'placeholder' : 'reps'
+              'placeholder' : 'R'
             }).appendTo(reps_input_col);
 
             // Add Inputs for each weigth
             var weight_input_col = $('<div/>', {
-              'class': 'col',
+              'class': 'col weight_input_col',
               'id': exerciseId + 'weight_input_col'
             }).appendTo(weight_row);
 
             var weight_input = $('<input/>',{
-              'class': 'form-control',
+              'class': 'form-control weight_input',
               'type' : 'text',
-              'placeholder' : 'weight'
+              'placeholder' : 'W'
             }).appendTo(weight_input_col);
 
             i++;
