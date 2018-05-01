@@ -1,6 +1,32 @@
+body, .form-control {
+    font-size: .8rem;
+}
+
 .exercise_wrapper {
     background: #ddd;
     padding: 20px;
     margin: 20px 0;
     border-radius: 3px;
 }
+
+.reps_row, .weight_row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.reps_input_col, .weight_input_col {
+    padding: 0;
+}
+
+.reps_input_col input, .weight_input_col input  {
+    border-radius: 0;
+}
+
+p.reps_label, p.weight_label {
+    margin-bottom: 0;
+}
+
+p.weight_label {
+    margin-top: 10px;
+}
+

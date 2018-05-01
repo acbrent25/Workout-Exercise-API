@@ -200,7 +200,8 @@ jQuery(document).ready(function(){
           }).insertAfter("#" + exerciseId + '_exerciseWell');
 
           // Add Rep Label
-          var reps_label = $('<span/>',{
+          var reps_label = $('<p/>',{
+            'class': 'reps_label',
             'id': exerciseId + '_reps_label',
             text: '# Reps'
           }).insertBefore(reps_row);
@@ -212,7 +213,8 @@ jQuery(document).ready(function(){
           }).insertAfter("#" + exerciseId + '_reps_row');
 
           // Add Weight Label
-          var weight_label = $('<span/>',{
+          var weight_label = $('<p/>', {
+            'class': 'weight_label',
             'id': exerciseId + '_weight_label',
             text: 'Weight'
           }).insertBefore(weight_row);
@@ -227,7 +229,7 @@ jQuery(document).ready(function(){
 
             // Add Inputs for each rep
             var reps_input_col = $('<div/>', {
-              'class': 'col',
+              'class': 'col reps_input_col',
               'id': exerciseId + 'reps_input_col'
             }).appendTo(reps_row);
 
