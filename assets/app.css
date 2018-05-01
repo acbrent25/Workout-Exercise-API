@@ -2,6 +2,9 @@ body, .form-control {
     font-size: .8rem;
 }
 
+
+/* EXERCISE BOX */
+
 .exercise_wrapper {
     background: #ddd;
     padding: 20px;
@@ -28,5 +31,11 @@ p.reps_label, p.weight_label {
 
 p.weight_label {
     margin-top: 10px;
+}
+
+/* ADD EXERCISE BUTTON */
+#add-exercise-btn {
+    font-size: 1.5rem;
+    color: #dd3333;
 }
 

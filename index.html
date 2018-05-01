@@ -31,12 +31,28 @@
       <!-- appWell -->
       <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col" id="add-exercise-btn">
             <i class="fas fa-plus-square addExercise"></i>
         </div>
          
       </div>
    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA8CmQMX2drgWD32yQjRGDwfNPCerP6b9Q",
+        authDomain: "workout-tracker-b1214.firebaseapp.com",
+        databaseURL: "https://workout-tracker-b1214.firebaseio.com",
+        projectId: "workout-tracker-b1214",
+        storageBucket: "",
+        messagingSenderId: "521924137138"
+      };
+      firebase.initializeApp(config);
+    </script>
 
 
     <!-- Optional JavaScript -->
