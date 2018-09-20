@@ -181,7 +181,7 @@ jQuery(document).ready(function(){
          '<option value="7">7</option>');
 
         
-         
+         // Test
          // Add Weight and Rep count for # of sets selected
         $('#' + exerciseId + '_sets_select').on('change', function(e){
           e.preventDefault();
